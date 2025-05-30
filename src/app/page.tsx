@@ -192,7 +192,9 @@ export default function Home() {
               {isVideo ? (
                 <>
                   <video
-                    ref={(el) => {videoRefs.current[reel.id] = el;}}
+                    ref={(el) => {
+                      videoRefs.current[reel.id] = el;
+                    }}
                     src={reel.background}
                     className="absolute inset-0 w-full h-full object-contain bg-black"
                     autoPlay={isActive && !isPaused}
@@ -268,7 +270,7 @@ export default function Home() {
                   step={0.1}
                   value={progress}
                   onChange={(e) => onSeek(reel.id, e)}
-                   className="absolute top-242 left-4 right-4 w-[calc(100%-4rem)] progress-range"
+                  className="absolute top-242 left-4 right-4 w-[calc(100%-4rem)] progress-range"
                   style={
                     { "--progress": `${progress}%` } as React.CSSProperties
                   }
